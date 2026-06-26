@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in — Verdict Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 2rem; max-width: 420px; line-height: 1.5; }
+    label { display: block; margin: 0.75rem 0 0.25rem; }
+    input { width: 100%; padding: 0.5rem; box-sizing: border-box; }
+    button { margin-top: 1rem; padding: 0.6rem 1.2rem; }
+  </style>
+</head>
+<body>
+  <h1>Sign in</h1>
+  <form id="login-form">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required />
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required />
+
+    <button type="submit">Sign in</button>
+  </form>
+  <script>
+    // Happy path: a successful "sign in" navigates to the landing page (leaves /login).
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = '/';
+    });
+  </script>
+</body>
+</html>
